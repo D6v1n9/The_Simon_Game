@@ -1,29 +1,15 @@
-$(document).on("keypress", function(event) {
-    if(event.key === "A") {
-        startGame() ;
-    }
-})
-//Math.floor(Math.random()*5);
-function startGame() {
-    let arr = [] ;
-    arr.push(Math.floor(Math.random()*4));
-    check(arr) ;
+let buttonColours = ["green","red","yellow","blue"] ;
+let gamePattern = [] ;
+function nextSequence() {
+    let randomNumber = Math.floor(Math.random()*4);
+    let randomChosenColour = buttonColours[randomNumber] ;
+    gamePattern.push(randomChosenColour) ;
+    animateButton(randomChosenColour) ;
 }
 
-function check(arr) {
-    $("button").on("click",function(event) {
-        switch (event) {
-            case value:
-                
-                break;
-        
-            default:
-                break;
-        }
-    })
-    while(true) {
-        for(let i=0;i<arr.size();i++) {
+function animateButton(colour) {
+    var colourSound = new Audio("./sounds/"+colour+".mp3");
+     colourSound.play();
+    $("#"+colour).animate({ opacity:0.1 },100).animate({opacity:1},100);
+};
 
-        }
-    }
-}
